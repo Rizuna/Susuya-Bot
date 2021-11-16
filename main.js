@@ -31,7 +31,7 @@ async function starts() {
 	
 	await Fg.connect({timeoutMs: 30*1000});
   fs.writeFileSync('./whatsapp/sessions.json', JSON.stringify(Fg.base64EncodedAuthInfo(), null, '\t'));
-  link = 'https://chat.whatsapp.com/G5sXrkhJ0pb0Tu8nhWLaFK'
+  link = '...'
   Fg.query({ json:["action", "invite", `${link.replace('https://chat.whatsapp.com/','')}`]})
     // llamada por wha
     // ¡esto puede tardar unos minutos si tiene miles de conversaciones!!Fg.on('chats-received', async ({ hasNewChats }) => {
@@ -70,7 +70,7 @@ async function starts() {
 	    let descrip = mdata.desc
 	    let welc = await getCustomWelcome(mdata.id)
 	    capt = welc.replace('@user', tag).replace('@name', username).replace('@bio', about).replace('@date', tanggal).replace('@desc', descrip).replace('@group', mdata.subject);
-	      Fg.send2ButtonLoc(mdata.id, buff, capt, 'Sígueme en Instagram\nhttps://www.instagram.com/fg98._', '⦙☰ MENU', '/menu', '⏍ INFO GP', '/infogp', false, {
+	      Fg.send2ButtonLoc(mdata.id, buff, capt, 'Sígueme en Instagram\nhttps://www.instagram.com/suzuya_juuzou_owo?r=nametag', '⦙☰ MENU', '/menu', '⏍ INFO GP', '/infogp', false, {
 	      contextInfo: {  
             mentionedJid: Fg.parseMention(capt)
 	      } 
@@ -84,7 +84,7 @@ async function starts() {
         let buff = await getBuffer(ppimg);
         let bye = await getCustomBye(mdata.id);
         capt = bye.replace('@user', tag).replace('@name', username).replace('@bio', about).replace('@date', tanggal).replace('@group', mdata.subject);
-        Fg.sendButtonLoc(mdata.id, buff, capt, 'Sígueme en Instagram\nhttps://www.instagram.com/fg98._', '👋🏻', 'unde', false, {
+        Fg.sendButtonLoc(mdata.id, buff, capt, 'Sígueme en Instagram\nhttps://www.instagram.com/suzuya_juuzou_owo?r=nametag', '👋🏻', 'unde', false, {
 	      contextInfo: { 
             mentionedJid: Fg.parseMention(capt)
 	      } 
